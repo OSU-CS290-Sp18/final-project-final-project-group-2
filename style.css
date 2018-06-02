@@ -1,0 +1,19 @@
+html{
+  background-color: #BFDAF5;
+  color: #2E2E2E;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.title-cloud{
+  width: 340px;
+  margin-left: 35%;
+}
+
+.title{
+  margin-top: -145px;
+  margin-left: 40%;
+}
+
+.navbar{
+  background-color: #F0F8FE;
+}
