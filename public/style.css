@@ -28,22 +28,22 @@ a{
   margin-top: -145px;
   margin-left: 5px;
   height: 100%;
-  width: 200px;
+  width: 220px;
 }
 
 .navlist{
   margin-top: 95px;
+  margin-left: 8px;
   padding: 20px;
 }
 
 .navitem{
   display: inline-block;
-  margin: 30px;
-  margin-left: -10px;
+  margin-top: 50px;
 }
 
 #navbar-search-input{
-  width: 105px;
+  width: 130px;
 }
 
 #create-dream-modal{
@@ -85,7 +85,7 @@ a{
 
 button{
   color: white;
-  background-color:  RGB(176, 196, 222);
+  background-color: RGB(176, 196, 222);
   height: 30px;
   border: .5px solid white;
   border-radius: 10px;
@@ -115,7 +115,7 @@ button{
   display: inline-block;
   position: relative;
   margin-top: 50px;
-  margin-left: 35.5%;
+  margin-left: 33%;
 }
 
 .dream{
