@@ -8,6 +8,8 @@ var dreamText = document.getElementById('dream-text-input');
 var dreamAuthor = document.getElementById('dreamer-input');
 var dreamContainer = document.getElementsByClassName('dream-container');
 
+var publicButton = document.getElementById('dream-public');
+var privateButton = document.getElementById('dream-private');
 
 
 /*
@@ -42,6 +44,10 @@ function logDream(event){
   console.log("In log dream function");
   console.log("Text: ", dreamText.value);
   console.log("Author: ", dreamAuthor.value);
+  if (publicButton.checked)
+    console.log("public button checked ");
+  else if (privateButton.checked)
+    console.log("private button checked ");
 
 
   clearModal();
@@ -72,8 +78,8 @@ searchButton.addEventListener('click', searchDreams);
 
 
 /*
-  Function checks to see if searched text is found in any twits.
-  If found, removed from DOM
+  Function checks to see if searched text is found in any dreams.
+  If not found, removed from DOM
 */
 
 
@@ -93,16 +99,10 @@ function searchDreams(event){
 
   for (var i = 0; i < allDreams.length; i++){
       if (text[i].textContent.indexOf(searchThis) >= 0){
-        /*removeTwit(i);
-        i--;*/
       }
       else if (author[i].textContent.indexOf(searchThis) >= 0){
-        /*removeTwit(i);
-        i--;*/
       }
       else if (title[i].textContent.indexOf(searchThis) >= 0){
-        /*removeTwit(i);
-        i--;*/
       }
       else{
         removeDream(i);
@@ -112,11 +112,8 @@ function searchDreams(event){
 }
 
 
-
-
-
 /*
-  Removes twits sub index value where searched text was found.
+  Removes dreams sub index value where searched text wasn't found.
 */
 
 
