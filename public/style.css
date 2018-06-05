@@ -135,3 +135,7 @@ button{
   left: 40px;
   top: -35px;
 }
+
+.dream-content{
+  border: 1px solid grey;
+}
