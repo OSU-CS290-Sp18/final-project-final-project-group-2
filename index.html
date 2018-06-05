@@ -17,69 +17,17 @@
 
       <nav class="navbar">
         <ul class="navlist">
-          <li class="navitem navlink active"><a href="#">Public Dream Space</a></li>
-          <li class="navitem navlink"><a href="#">Private Dreams</a></li>
           <li class="navitem navbar-search">
             <input type="text" id="navbar-search-input" placeholder="Search...">
             <button type="button" id="navbar-search-button"><i class="fas fa-search"></i></button>
-          </li>
+          </li><li class="navitem navlink active"><a href="#">Public Dream Space</a></li>
+          <li class="navitem navlink"><a href="#">Private Dreams</a></li>
         </ul>
       </nav>
     </header>
 
-    <main class= "dream-container">
-      <article class= "dream">
-        <div class= "dream-content">
-          <p class= "dream-title">
-            Dream On
-          </p>
-          <p class= "dreamer">
-            Aerosmith
-          </p>
-          <p class= "dream-content">
-            Sing with me, sing for the year
-            Sing for the laughter, sing for the tear
-            Sing with me, just for today
-          </p>
-        </div>
-      </article>
-
-      <article class= "dream">
-        <div class= "dream-content">
-          <p class= "dream-title">
-            Daydream Believer
-          </p>
-          <p class= "dreamer">
-            The Monkees
-          </p>
-          <p class= "dream-content">
-            Cheer up sleepy Jean. Oh, what can it mean to a
-            Daydream believer and a Homecoming queen?
-          </p>
-        </div>
-      </article>
-    </main>
-
-    <article class= "dream">
-      <div class= "dream-content">
-        <p class= "dream-title">
-          Enter Sandman
-        </p>
-        <p class= "dreamer">
-          Metallica
-        </p>
-        <p class= "dream-content">
-          Exit light, enter night, take my hand, we're off to Never Never-land
-        </p>
-      </div>
-    </article>
-
-    <button type="button" id="create-dream">Log Dream</button>
-
-    <div id="modal-backdrop" class="hidden"></div>
-    <div id="create-dream-modal" class="hidden">
+    <div id="create-dream-modal">
       <div class="modal-dialog">
-
         <div class="modal-header">
           <h3>Log Your Dream</h3>
           <button type="button" class="modal-close-button">&times;</button>
@@ -96,13 +44,76 @@
           </div>
         </div>
 
+        <div class="input-container">
+
+            <legend>Type of Post</legend>
+            <div>
+              <label for="dream-private">Private</label>
+              <input type="radio" name="dream-type" id="dream-private" value="private" checked>
+            </div>
+
+            <div>
+              <label for="dream-public">Public</label>
+              <input type="radio" name="dream-type" id="dream-public" value="public">
+            </div>
+        
+        </div>
         <div class="modal-footer">
           <button type="button" class="modal-cancel-button">Cancel</button>
           <button type="button" class="modal-accept-button">Log Dream</button>
         </div>
-
       </div>
-    </div>
+    </div>    <main class= "dream-container">
+      <article class= "dream">
+        <div class= "dream-content">
+          <p class= "dream-title">
+            Dream On
+          </p>
+
+          <p class= "dream-content">
+            Sing with me, sing for the year
+            Sing for the laughter, sing for the tear
+            Sing with me, just for today
+          </p>
+          <p>~~~</p>
+          <p class= "dreamer">
+            Aerosmith
+          </p></div>
+      </article>
+
+      <article class= "dream">
+        <div class= "dream-content">
+          <p class= "dream-title">
+            Daydream Believer
+          </p>
+          <p class= "dream-content">
+            Cheer up sleepy Jean. Oh, what can it mean to a
+            Daydream believer and a Homecoming queen?
+          </p>
+          <p>~~~</p>
+          <p class= "dreamer">
+            The Monkees
+          </p></div>
+      </article>
+    </main>
+
+    <article class= "dream">
+      <div class= "dream-content">
+        <p class= "dream-title">
+          Enter Sandman
+        </p>
+        <p class= "dream-content">
+          Exit light, enter night, take my hand, we're off to Never Never-land
+        </p>
+        <p>~~~</p>
+        <p class= "dreamer">
+          Metallica
+        </p></div>
+    </article>
+
+    <button type="button" id="create-dream">Log Dream</button>
+
+
 
   </body>
 

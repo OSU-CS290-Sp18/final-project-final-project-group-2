@@ -6,8 +6,10 @@ html{
 
 a{
   text-decoration: none;
-
+  color: black;
+  text-shadow: grey 1px 1px 10px;
 }
+
 
 .title-cloud{
   width: 340px;
@@ -39,7 +41,37 @@ a{
   margin-left: -10px;
 }
 
+#create-dream-modal{
+  background-color: white;
+  border: 1px grey solid;
+  border-radius: 20px;
+  width: 400px;
+  height: 300px;
+  margin-left: 600px;
+}
+
 .dream-container{
-  margin-top: -100px;
-  margin: 20%;
+  display: flex;
+  position: relative;
+  margin-top: 50px;
+}
+
+.dream{
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  left: 30%;
+  background-color: white;
+  border: 1px grey solid;
+  border-radius: 20px;
+  margin: 50px;
+  padding: 10px;
+  max-width: 300px;
+  max-height: 700px;
+}
+
+.dreamer{
+  position: relative;
+  left: 40px;
+  top: -35px;
 }
