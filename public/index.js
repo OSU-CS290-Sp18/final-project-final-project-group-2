@@ -89,6 +89,7 @@ function searchDreams(event){
 
   var searchThis = searchBar.value;
   console.log("==searchThis", searchThis);
+  searchBar.value = "";
 
   for (var i = 0; i < allDreams.length; i++){
       if (text[i].textContent.indexOf(searchThis) >= 0){
