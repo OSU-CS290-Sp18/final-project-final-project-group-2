@@ -30,16 +30,15 @@
       <div class="modal-dialog">
         <div class="modal-header">
           <h3>Log Your Dream</h3>
-          <button type="button" class="modal-close-button">&times;</button>
         </div>
 
         <div class="modal-body">
           <div class="dream-input-element">
-            <label for="dream-text-input">Twit text</label>
+            <label for="dream-text-input" id="dream-text">Twit text</label>
             <textarea id="dream-text-input"></textarea>
           </div>
           <div class="dream-input-element">
-            <label for="dreamer-input">Author</label>
+            <label for="dreamer-input" id="dream-author">Author</label>
             <input type="text" id="dreamer-input">
           </div>
         </div>
@@ -56,14 +55,15 @@
               <label for="dream-public">Public</label>
               <input type="radio" name="dream-type" id="dream-public" value="public">
             </div>
-        
+
         </div>
         <div class="modal-footer">
-          <button type="button" class="modal-cancel-button">Cancel</button>
+          <button type="button" class="modal-cancel-button">Clear</button>
           <button type="button" class="modal-accept-button">Log Dream</button>
         </div>
       </div>
-    </div>    <main class= "dream-container">
+    </div>
+    <main class= "dream-container">
       <article class= "dream">
         <div class= "dream-content">
           <p class= "dream-title">
@@ -110,8 +110,6 @@
           Metallica
         </p></div>
     </article>
-
-    <button type="button" id="create-dream">Log Dream</button>
 
 
 
