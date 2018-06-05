@@ -76,7 +76,7 @@ a{
 
 #dream-author{
   margin-left: 15px;
-  margin-right: 22px;
+  margin-right: 41px;
 }
 
 #dreamer-input{
@@ -108,14 +108,15 @@ button{
   height: 60px;
   padding: 10px;
   margin-top: 10px;
-  margin-left: 94px;
+  margin-left: 114px;
 }
 
 .dream-container{
   display: inline-block;
   position: relative;
+  align-items: center;
   margin-top: 50px;
-  margin-left: 33%;
+  margin-left: 31.5%;
 }
 
 .dream{
@@ -125,8 +126,8 @@ button{
   border-radius: 20px;
   margin-top: 40px;
   padding: 10px;
-  min-width: 300px;
-  max-width: 550px;
+  min-width: 500px;
+  max-width: 600px;
   max-height: 700px;
 }
 
@@ -136,6 +137,29 @@ button{
   top: -35px;
 }
 
+.dream-title{
+  padding: 10px;
+  padding-bottom: 0px;
+  height: 30px;
+  max-width: 170px;
+  font-size: 18px;
+  text-decoration: underline;
+  margin-left: 180px;
+
+}
+
 .dream-content{
+  max-width: 585px;
+  margin-left: 5px;
+  padding: 10px;
   border: 1px solid grey;
+  border-radius: 10px;
+}
+
+.fa-user-secret{
+  size: 1.33em;
+}
+
+.hidden{
+  display: none;
 }
