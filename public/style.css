@@ -26,8 +26,9 @@ a{
   display: inline-block;
   position: fixed;
   margin-top: -145px;
+  margin-left: 5px;
   height: 100%;
-  width: 180px;
+  width: 200px;
 }
 
 .navlist{
@@ -41,22 +42,80 @@ a{
   margin-left: -10px;
 }
 
+#navbar-search-input{
+  width: 105px;
+}
+
 #create-dream-modal{
+  display: block;
   background-color: white;
   border: 1px grey solid;
   border-radius: 20px;
   width: 500px;
-  height: 250px;
+  height: 355px;
   margin-top: 100px;
   margin-left: 35%;
 }
 
+.modal-header{
+  margin-left: 170px;
+  width: 150px;
+  text-decoration: underline;
+}
+
+#dream-text{
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+#dream-text-input{
+  width:300px;
+  height: 150px;
+  border: .1px solid grey;
+}
+
+#dream-author{
+  margin-left: 15px;
+  margin-right: 22px;
+}
+
+#dreamer-input{
+  border: .1px solid grey;
+}
+
+button{
+  color: white;
+  background-color:  RGB(176, 196, 222);
+  height: 30px;
+  border: .5px solid white;
+  border-radius: 10px;
+}
+
+.modal-footer{
+  margin-left: 335px;
+  margin-top: -15px;
+}
+
+.modal-accept-button{
+  position: relative;
+  margin-left: 10px;
+}
+
+.input-container{
+  position: relative;
+  border: .1px solid grey;
+  width: 100px;
+  height: 60px;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 94px;
+}
 
 .dream-container{
   display: inline-block;
   position: relative;
   margin-top: 50px;
-  margin-left: 33%;
+  margin-left: 35.5%;
 }
 
 .dream{
