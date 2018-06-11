@@ -1,0 +1,9 @@
+<main class= "dream-container">
+
+  {{#each dream}}
+    {{#unless public}}
+      {{> dreamTemplate}}
+    {{/unless}}
+  {{/each}}
+
+</main>

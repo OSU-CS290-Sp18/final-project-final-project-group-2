@@ -1,0 +1,53 @@
+{{> header}}
+
+<div id="create-dream-modal">
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h3>Log Your Dream</h3>
+    </div>
+
+    <div class="modal-body">
+            <div class="dream-input-element">
+              <label for="dream-title-input" id="dream-title">Dream title</label>
+              <input type="text" id="dream-title-input">
+            </div>
+            <div class="dream-input-element">
+            <label for="dream-text-input" id="dream-text">Dream text</label>
+            <textarea id="dream-text-input"></textarea>
+          </div>
+          <div class="dream-input-element">
+            <label for="dreamer-input" id="dream-author">Author</label>
+            <input type="text" id="dreamer-input">
+          </div>
+        </div>
+
+    <div class="input-container">
+
+        <legend>Type of Post</legend>
+        <div>
+          <label for="dream-private">Private</label>
+          <input type="radio" name="dream-type" id="dream-private" value="private" checked>
+        </div>
+
+        <div>
+          <label for="dream-public">Public</label>
+          <input type="radio" name="dream-type" id="dream-public" value="public">
+        </div>
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="modal-cancel-button">Clear</button>
+      <button type="button" class="modal-accept-button">Log Dream</button>
+    </div>
+  </div>
+</div>
+
+<main class= "dream-container">
+
+  {{#each dream}}
+    {{#if public}}
+      {{> dreamTemplate}}
+    {{/if}}
+  {{/each}}
+
+</main>
