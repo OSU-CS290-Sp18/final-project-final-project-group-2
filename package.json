@@ -1,0 +1,29 @@
+{
+  "name": "group2final",
+  "version": "1.0.0",
+  "description": "Our group final project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "handlebars views/partials/dreamTemplate.handlebars -f public/dreamTemplate.js",
+    "prestart": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OSU-CS290-Sp18/final-project-group-2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OSU-CS290-Sp18/final-project-group-2/issues"
+  },
+  "homepage": "https://github.com/OSU-CS290-Sp18/final-project-group-2#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "handlebars": "^4.0.11",
+    "mongodb": "^3.0.10"
+  }
+}
