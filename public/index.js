@@ -1,15 +1,22 @@
 
 var dreamButton = document.getElementsByClassName('modal-accept-button');
-dreamButton[0].addEventListener('click', checkInput);
+if(dreamButton[0])
+{
+  dreamButton[0].addEventListener('click', checkInput);
+}
 
 var clearButton = document.getElementsByClassName('modal-cancel-button');
-clearButton[0].addEventListener('click', clearModal);
-var dreamText = document.getElementById('dream-text-input');
-var dreamAuthor = document.getElementById('dreamer-input');
+if(clearButton[0])
+{
+  clearButton[0].addEventListener('click', clearModal);
+}
 var dreamContainer = document.getElementsByClassName('dream-container');
 
 var publicButton = document.getElementById('dream-public');
 var privateButton = document.getElementById('dream-private');
+var dreamText = document.getElementById('dream-text-input');
+var dreamAuthor = document.getElementById('dreamer-input');
+var dreamTitle = document.getElementById('dream-title-input');
 
 
 /*
@@ -18,9 +25,8 @@ message displayed, otherwise posts dream
 */
 
 function checkInput(event){
-  console.log("Text: ", dreamText.value);
-  console.log("Author: ", dreamAuthor.value);
- if(dreamText.value == "" || dreamAuthor.value ==""){
+
+ if(dreamText.value == "" || dreamAuthor.value =="" || dreamTitle.value ==""){
    alert("All fields must contain content to post!");
  }
  else {
@@ -38,17 +44,65 @@ function clearModal (event){
  console.log("in clearModal function");
  dreamText.value = "";
  dreamAuthor.value = "";
+ dreamTitle.value = "";
 }
 
 function logDream(event){
-  console.log("In log dream function");
-  console.log("Text: ", dreamText.value);
-  console.log("Author: ", dreamAuthor.value);
-  if (publicButton.checked)
-    console.log("public button checked ");
-  else if (privateButton.checked)
-    console.log("private button checked ");
 
+  var request = new XMLHttpRequest();
+  var url = "/addDream";
+  request.open("POST", url);
+
+  if (publicButton.checked)
+  {
+    var dreamContext = {
+    dream_text: dreamText.value,
+    dreamer: dreamAuthor.value,
+    dream_title: dreamTitle.value,
+    public: "true"
+    };
+    var requestBody = JSON.stringify(dreamContext);
+
+    request.addEventListener('load', function (event) {
+      if (event.target.status === 200) {
+        var dreamHTML =  Handlebars.templates.dreamTemplate(dreamContext);
+        var dreamContainer = document.querySelector('.dream-container');
+        dreamContainer.insertAdjacentHTML('beforeend',dreamHTML);
+      } else {
+        alert("Error storing dream: " + event.target.response);
+      }
+    });
+
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(requestBody);
+/*
+    var dreamHTML =  Handlebars.templates.dreamTemplate(dreamContext);
+    var dreamContainer = document.querySelector('.dream-container');
+    dreamContainer.insertAdjacentHTML('beforeend',dreamHTML);*/
+ }
+  else if (privateButton.checked)
+  {
+    var dreamContext = {
+    dream_text: dreamText.value,
+    dreamer: dreamAuthor.value,
+    dream_title: dreamTitle.value,
+    public: ""
+    };
+    var requestBody = JSON.stringify(dreamContext);
+
+    request.addEventListener('load', function (event) {
+      if (event.target.status === 200) {
+        var dreamHTML =  Handlebars.templates.dreamTemplate(dreamContext);
+        var dreamContainer = document.querySelector('.dream-container');
+        dreamContainer.insertAdjacentHTML('beforeend',dreamHTML);
+      } else {
+        alert("Error storing photo: " + event.target.response);
+      }
+    });
+
+    request.setRequestHeader('Content-Type', 'application/json');
+    request.send(requestBody);
+  }
 
   clearModal();
 }
@@ -58,7 +112,6 @@ function logDream(event){
 var searchBar = document.getElementById('navbar-search-input');
 var searchButton = document.getElementById('navbar-search-button');
 var dreams = document.getElementsByClassName('dream');
-console.log("length:", dreams.length);
 var allDreams = [];
 
 
@@ -70,10 +123,10 @@ var title = document.getElementsByClassName('dream-title');
 var text = document.getElementsByClassName('dream-text');
 var author =  document.getElementsByClassName('dreamer');
 
-console.log("==allDreams[0]", allDreams[0]);
-
-searchButton.addEventListener('click', searchDreams);
-
+if(searchButton)
+{
+  searchButton.addEventListener('click', searchDreams);
+}
 
 
 
