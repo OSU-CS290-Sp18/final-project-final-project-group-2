@@ -75,10 +75,7 @@ function logDream(event){
 
     request.setRequestHeader('Content-Type', 'application/json');
     request.send(requestBody);
-/*
-    var dreamHTML =  Handlebars.templates.dreamTemplate(dreamContext);
-    var dreamContainer = document.querySelector('.dream-container');
-    dreamContainer.insertAdjacentHTML('beforeend',dreamHTML);*/
+
  }
   else if (privateButton.checked)
   {
