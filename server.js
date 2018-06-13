@@ -27,10 +27,7 @@ app.set('view engine', 'handlebars');
 app.use(bodyParser.json());
 
 app.use(express.static('public'));
-/*
-app.get('/', function (req, res, next){
-  res.status(200).render('publicPage', {dream: dreamData});
-}); */
+
 
 
 app.get('/', function (req, res, next){
@@ -72,33 +69,6 @@ app.get('/personalPage', function (req, res, next){
 
   });
 
-/*
-var person = req.params.person.toLowerCase();
-if (req.body && req.body.caption && req.body.photoURL) {
-  var photo = {
-    caption: req.body.caption,
-    photoURL: req.body.photoURL
-  };
-  var peopleCollection = mongoDB.collection('people');
-  peopleCollection.updateOne(
-    { personId: person },
-    { $push: { photos: photo } },
-    function (err, result) {
-      if (err) {
-        res.status(500).send("Error inserting photo into DB.")
-      } else {
-        console.log("== mongo insert result:", result);
-        if (result.matchedCount > 0) {
-          res.status(200).end();
-        } else {
-          next();
-        }
-      }
-    }
-  );
-} else {
-  res.status(400).send("Request needs a JSON body with caption and photoURL.")
-}*/
 
 
 app.post('/addDream', function (req, res, next) {
@@ -131,31 +101,7 @@ app.post('/addDream', function (req, res, next) {
   }
 });
 
-/*
-app.post('/addDream', function (req, res, next) {
-  if (req.body && req.body.dreamer && req.body.dream_text && req.body.dream_title) {
-    console.log("== Client added the following dream:");
-    console.log("  - person:", req.params.dreamer);
-    console.log("  - url:", req.body.url);
-    console.log("  - caption:", req.body.dream_text);
 
-    var dream = {
-      dreamer: req.body.dreamer,
-      dream_text: req.body.dream_text,
-      dream_title: req.body.dream_title,
-      public: req.body.public
-    };
-    dreamData.push(dream);
-    res.status(200).end();
-
-  //  res.status(200).send("Dream successfully added");
-
-  } else {
-    res.status(400).send("Requests to this path must " +
-      "contain a JSON body with dreamer, dream-title, & dream-text " +
-      "fields.");
-  }
-});*/
 
 app.get('*', function (req, res) {
   res.status(404).render('404');
