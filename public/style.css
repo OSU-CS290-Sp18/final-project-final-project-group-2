@@ -189,3 +189,11 @@ button{
 .hidden{
   display: none;
 }
+
+.modal-cancel-button:hover{
+  cursor: pointer;
+}
+
+.modal-accept-button:hover{
+  cursor: pointer;
+}
